@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+
+    <router-view class="rv"></router-view>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+// import HeaderNav from "@/components/headerNav";
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  },
+  // methods: {
+  //   cnm() {
+  //     console.log(this.user);
+  //   }
+  // },
+  props: ['user']
+  ,
+  mounted() {
+    // console.log(sessionStorage.getItem('user'));
+    // this.$store.commit('modifyUserInfo', localStorage.getItem('user').username, localStorage.getItem('user').uid);
+    // //sessionStorage.setItem('user', null);
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .rv {
+    width: 100%;
+    margin: 0 auto;
+  }
 </style>
